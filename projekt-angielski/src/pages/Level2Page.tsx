@@ -95,7 +95,7 @@ function Level2Page({ onMaintenanceAccess }: Level2PageProps) {
               <div className="flex items-center justify-center gap-3">
                 <Button
                   type="submit"
-                  className="bg-neutral-600 hover:bg-neutral-700 text-white px-6 py-2 rounded-lg font-bold"
+                  className="bg-neutral-700 hover:bg-neutral-800 text-white px-6 py-2 rounded-lg font-bold"
                 >
                   Access 
                 </Button>
