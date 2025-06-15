@@ -11,7 +11,7 @@ function HomePage({ onAuthenticate }: HomePageProps) {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-8 bg-stone-950">
+    <div className="min-h-screen flex items-center justify-center p-8 bg-neutral-950">
       <div className="max-w-2xl text-center space-y-8">
         <h1 className="text-4xl font-bold text-red-400 mb-8 font-mono">
           Welcome to Your Nightmare... <br/> I mean, Studies!
@@ -55,7 +55,7 @@ function HomePage({ onAuthenticate }: HomePageProps) {
         
         <Button 
           onClick={handleRecruitment}
-          className="bg-slate-600 hover:bg-slate-700 text-white px-8 py-3 text-xl rounded-lg transition-colors duration-200"
+          className="bg-slate-600 hover:bg-slate-700 text-white px-8 py-3 text-xl rounded-lg transition-colors duration-200 font-mono"
         >
           I'm ready!
         </Button>
