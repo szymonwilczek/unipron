@@ -1,24 +1,16 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import type { Level4PageProps } from '@/types'
 
-interface Level4PageProps {
-  onProofAccess: () => void
-}
-
-function Level4Page({ onProofAccess }: Level4PageProps) {
+function Level4Page() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    // Automatycznie ustaw dostęp do proof i przekieruj
-    onProofAccess()
-    // Krótkie opóźnienie przed przekierowaniem
     const timer = setTimeout(() => {
       navigate('/amial/term0')
     }, 2000)
 
     return () => clearTimeout(timer)
-  }, [onProofAccess, navigate])
+  }, [navigate])
 
   return (
     <div className="min-h-screen flex items-center justify-center p-8">
