@@ -23,15 +23,15 @@ function HomePage({ onAuthenticate }: HomePageProps) {
           </h2>
           
           <div className="space-y-4 text-gray-200 leading-relaxed font-serif font-semibold">
-            <p className="font-bold text-2xl" style={{ fontFamily: 'Georgia, serif' }}  >RECRUITMENT ANNOUNCEMENT</p>
+            <p className="font-semibold text-2xl" style={{ fontFamily: 'Georgia, serif' }}  >RECRUITMENT ANNOUNCEMENT</p>
             
-            <p className="text-lg text-justify" style={{ fontFamily: 'Georgia, serif' }}>
+            <p className="text-lg italic font-medium text-justify" style={{ fontFamily: 'Georgia, serif' }}>
               The Faculty of Automatic Control, Electronics and Computer Science 
               at Silesian University of Technology invites prospective students 
               to apply for our undergraduate and graduate programs.
             </p>
             
-            <p className="text-lg text-justify" style={{ fontFamily: 'Georgia, serif' }}>
+            <p className="text-lg italic font-medium text-justify" style={{ fontFamily: 'Georgia, serif' }}>
               Our faculty offers cutting-edge education in computer science, 
               automation, robotics, and electronics. Students will have access 
               to modern laboratories, experienced faculty members, and opportunities 
@@ -55,7 +55,7 @@ function HomePage({ onAuthenticate }: HomePageProps) {
         
         <Button 
           onClick={handleRecruitment}
-          className="bg-slate-600 hover:bg-slate-700 text-white px-8 py-3 text-xl rounded-lg transition-colors duration-200 font-mono"
+          className="bg-neutral-700 hover:bg-neutral-800 text-white px-8 py-3 text-xl rounded-lg transition-colors duration-200 font-mono"
         >
           I'm ready!
         </Button>
