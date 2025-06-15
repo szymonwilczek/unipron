@@ -20,17 +20,17 @@ function TermPage({ termNumber }: TermPageProps) {
                 <h2 className="text-2xl font-semibold text-blue-400 mb-4">
                   Mathematical Analysis - Lecture Slide
                 </h2>
-                
+
                 <div className="bg-white text-black p-6 rounded-lg font-serif">
                   <h3 className="text-xl font-bold mb-4 text-center">
                     Definicja granicy funkcji (Weierstrassa)
                   </h3>
-                  
+
                   <div className="space-y-4">
                     <p>
                       Niech f: D → ℝ oraz niech x₀ będzie punktem skupienia zbioru D.
                     </p>
-                    
+
                     <div className="bg-yellow-100 p-4 rounded border-l-4 border-yellow-500">
                       <p className="font-bold">
                         lim[x→x₀] f(x) = L
@@ -39,13 +39,13 @@ function TermPage({ termNumber }: TermPageProps) {
                         ⟺ ∀ε &gt; 0 ∃δ &gt; 0 ∀x ∈ D: 0 &lt; |x - x₀| &lt; δ ⟹ |f(x) - L| &lt; ε
                       </p>
                     </div>
-                    
+
                     <div className="text-sm text-gray-600">
                       <p><strong>Przykład:</strong></p>
                       <p>Udowodnij, że lim[x→2] (3x - 1) = 5</p>
                       <p className="mt-2 italic">
                         "Pamiętajcie, że na egzaminie będziecie musieli udowodnić każde twierdzenie!"
-                        <br/>- Prof. Łoboz
+                        <br />- Prof. Łoboz
                       </p>
                     </div>
                   </div>
@@ -102,6 +102,23 @@ function TermPage({ termNumber }: TermPageProps) {
               >
                 Powrót do wyboru terminu
               </Button>
+            </div>
+          )
+        }
+      case 3:
+        return {
+          title: "Przekierowanie...",
+          subtitle: "Przenoszenie do egzaminu",
+          content: (
+            <div className="text-center space-y-6">
+              <div className="text-8xl animate-spin">⚡</div>
+              <h2 className="text-3xl font-bold text-blue-400">
+                Przekierowanie...
+              </h2>
+              <p className="text-gray-300 text-lg">
+                Przenoszenie do egzaminu z fizyki...
+              </p>
+              {setTimeout(() => navigate("/physics/egzamin"), 2000) && null}
             </div>
           )
         }
