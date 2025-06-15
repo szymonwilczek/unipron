@@ -18,12 +18,12 @@ function Level2Page({ onMaintenanceAccess }: Level2PageProps) {
     
     const normalizedPassword = password.toLowerCase().trim()
     const validPasswords = [
-      'maszyna w',
-      'maszyna W',
-      'Maszyna w', 
-      'Maszyna W',
-      'MASZYNA W',
-      'MASZYNA w'
+      'machine w',
+      'machine W',
+      'Machine w', 
+      'Machine W',
+      'MACHINE W',
+      'MACHINE w'
     ]
     
     const isValid = validPasswords.some(valid => 
@@ -34,31 +34,31 @@ function Level2Page({ onMaintenanceAccess }: Level2PageProps) {
       onMaintenanceAccess()
       navigate('/system/diagnostics/core')
     } else {
-      setError('Invalid access key. Check the machine\'s heart.')
+      setError('Invalid access key.')
       setPassword('')
     }
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-8">
+    <div className="min-h-screen flex items-center justify-center p-8 bg-neutral-950">
       <div className="max-w-2xl text-center space-y-8">
         <h1 className="text-3xl font-bold text-yellow-400">
-          System Maintenance
+          USOS System Maintenance
         </h1>
         
-        <div className="bg-gray-800 p-8 rounded-lg border border-gray-700">
+        <div className="bg-neutral-900 p-8 rounded-lg border border-yellow-700">
           <div className="space-y-6">
-            <p className="text-gray-200 text-lg">
+            <p className="text-gray-200 text-lg text-gray-200">
               The system is currently undergoing scheduled maintenance.
             </p>
             
             <div className="bg-yellow-900/30 border border-yellow-600 rounded-lg p-4">
               <p className="text-yellow-200">
-                We apologize for the inconvenience. Your assistance is required 
+                We apologize for the inconvenience. <br/> Your assistance is required 
                 to resolve this issue.
               </p>
-              <p className="text-yellow-300 font-medium mt-2">
-                Find the key in the heart of the machine.
+              <p className="text-yellow-300 font-medium mt-2 font-mono">
+                Find the "W" key in the heart of the machine.
               </p>
             </div>
             
@@ -66,7 +66,6 @@ function Level2Page({ onMaintenanceAccess }: Level2PageProps) {
               <button
                 onClick={handleMaintenanceClick}
                 className="text-6xl transition-transform duration-200 cursor-pointer"
-                title="Technical Issues - Click for assistance"
               >
                 ⚠️
               </button>
@@ -75,22 +74,16 @@ function Level2Page({ onMaintenanceAccess }: Level2PageProps) {
         </div>
 
         {showLogin && (
-          <div className="bg-gray-800 p-6 rounded-lg border border-red-500 space-y-4">
-            <h3 className="text-xl font-semibold text-red-400">
-              System Access Required
-            </h3>
+          <div className="bg-neutral-900 p-6 rounded-lg border border-red-500 space-y-4 font-mono">
             
             <form onSubmit={handlePasswordSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm text-gray-300 mb-2">
-                  Enter access key:
-                </label>
                 <input
                   type="text"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-500"
-                  placeholder="Access key..."
+                  className="w-full px-4 py-2 bg-neutral-800 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-neutral-500" 
+                  placeholder="..."
                   autoFocus
                 />
               </div>
@@ -99,23 +92,12 @@ function Level2Page({ onMaintenanceAccess }: Level2PageProps) {
                 <p className="text-red-400 text-sm">{error}</p>
               )}
               
-              <div className="flex gap-3">
+              <div className="flex items-center justify-center gap-3">
                 <Button
                   type="submit"
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg"
+                  className="bg-neutral-600 hover:bg-neutral-700 text-white px-6 py-2 rounded-lg font-bold"
                 >
-                  Access System
-                </Button>
-                <Button
-                  type="button"
-                  onClick={() => {
-                    setShowLogin(false)
-                    setPassword('')
-                    setError('')
-                  }}
-                  className="bg-gray-600 hover:bg-gray-700 text-white px-6 py-2 rounded-lg"
-                >
-                  Cancel
+                  Access 
                 </Button>
               </div>
             </form>
