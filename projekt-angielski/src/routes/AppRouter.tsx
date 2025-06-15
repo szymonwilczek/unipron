@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { useState } from 'react'
 import HomePage from '@/pages/hello/HomePage'
-import Level2Page from '@/pages/Level2Page'
+import Level2Page from '@/pages/lvl2/Level2Page'
 import Level3Page from '@/pages/Level3Page'
 import Level4Page from '@/pages/Level4Page'
 import Level5Page from '@/pages/Level5Page'
