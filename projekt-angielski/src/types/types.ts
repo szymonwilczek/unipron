@@ -10,10 +10,6 @@ export interface Level3PageProps {
   onCodeAccess: () => void
 }
 
-export interface Level4PageProps {
-  onProofAccess: () => void
-}
-
 export interface Level5PageProps {
   onFinalAccess: () => void
 }
