@@ -22,7 +22,7 @@ function StatusDisplay({ status }: { status: string }) {
             status.includes('3.0') ? 'ACCEPTED' : 'EXAMINATION...'}
         </h3>
         {status.includes('3.0') && (
-          <p className="text-green-300 text-xl font-bold">OCENA: 3.0</p>
+          <p className="text-green-300 text-xl font-bold">Grade: 3.0</p>
         )}
         {status === 'ZWROT' && (
           <p className="text-red-300 text-sm">
