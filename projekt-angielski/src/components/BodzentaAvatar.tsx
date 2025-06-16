@@ -32,9 +32,9 @@ function BodzentaAvatar({ position }: BodzentaAvatarProps) {
         <div className="absolute inset-0 bg-red-500/20 rounded-full blur-xl scale-150 animate-pulse"></div>
         
         {/* Avatar */}
-        <div className="relative w-20 h-20 rounded-full overflow-hidden border-3 border-red-500 shadow-lg shadow-red-500/50">
+        <div className="relative w-32 h-32 rounded-full overflow-hidden border-3 border-red-500 shadow-lg shadow-red-500/50">
           <img 
-            src="/bodzenta-avatar.png" 
+            src="/images/bodzenta.png" 
             alt="Prof. Jerzy Bodzenta"
             className="w-full h-full object-cover"
             onError={(e) => {

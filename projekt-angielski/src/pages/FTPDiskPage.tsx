@@ -53,7 +53,11 @@ function FTPDiskPage() {
     '/fizyka': [
       { name: '..', type: 'folder', modified: '' },
       { name: 'mechanika.txt', type: 'file', size: '18.7 KB', modified: '2023-09-12 09:20',
-        content: 'MECHANIKA - wzory podstawowe\n\nKinematyka:\nv = s/t\na = v/t\ns = v₀t + ½at²\n\nDynamika:\nF = ma\nP = mv\nE = ½mv²\n\nGrawita​cja:\nF = G(m₁m₂)/r²' }
+        content: 'MECHANIKA - wzory podstawowe\n\nKinematyka:\nv = s/t\na = v/t\ns = v₀t + ½at²\n\nDynamika:\nF = ma\nP = mv\nE = ½mv²\n\nGrawita​cja:\nF = G(m₁m₂)/r²' },
+{ name: 'entropy.txt', type: 'file', size: '2.3 KB', modified: '2024-07-02 07:28',
+        content:  'A measure of disorder or energy dissipation in a system'
+      }
+
     ]
   }
 
