@@ -15,6 +15,7 @@ import Level10Page from '@/pages/lvl_10/Level10Page'
 import Level11Page from '@/pages/lvl_11/Level11Page'
 import EndingPage from '@/pages/end/EndingPage'
 import EasterEggPage from '@/pages/easter-egg/EasterEggPage'
+import TerminalPage from '@/pages/lvl9/TerminalPage'
 
 function AppRouter() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
@@ -84,6 +85,9 @@ function AppRouter() {
             path="/digital-systems/advanced"
             element={<Level9Page />}
           />
+
+          <Route path="/terminal" element={<TerminalPage />} />
+          <Route path="/console" element={<TerminalPage />} />
 
           <Route path="/forum" element={<FTPDiskPage />} />
           <Route path="/dysk" element={<FTPDiskPage />} />
