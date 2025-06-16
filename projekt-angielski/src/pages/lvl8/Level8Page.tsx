@@ -51,8 +51,8 @@ function Level8Page() {
 
   useEffect(() => {
     ; (window as any).siminskiSecret1 = "recursion"
-      ; (window as any).siminskiAnswer2 = "Not this one..."
-      ; (window as any).siminskiHint = "Keep looking..."
+    ; (window as any).siminskiAnswer2 = "Not this one..."
+    ; (window as any).siminskiHint = "Keep looking..."
 
     console.log("Welcome in programming laboratory!")
     console.log("Sitof Krzymiński hid the answers in different places...")
@@ -93,7 +93,7 @@ function Level8Page() {
 
   const handleComplete = () => {
     if (score >= 4) {
-      navigate('/algorithms/final')
+      navigate('/digital-systems/advanced')
     }
   }
 
@@ -227,7 +227,7 @@ function CompletionScreen({ score, total, onComplete }: {
                 onClick={onComplete}
                 className="bg-neutral-700 hover:bg-neutral-800 text-white px-8 py-4 text-xl font-bold"
               >
-              next 
+                next
               </Button>
             </div>
           ) : (
