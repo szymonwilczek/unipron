@@ -13,3 +13,12 @@ export interface Level3PageProps {
 export interface Level5PageProps {
   onFinalAccess: () => void
 }
+
+export interface Lever {
+  id: string
+  unit: string
+  symbol: string
+  position: { x: number; y: number }
+  isActivated: boolean
+  isBomb: boolean
+}
