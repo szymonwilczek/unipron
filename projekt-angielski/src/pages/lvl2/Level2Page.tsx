@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import type { Level2PageProps } from '@/types'
@@ -7,7 +7,50 @@ function Level2Page({ onMaintenanceAccess }: Level2PageProps) {
   const [showLogin, setShowLogin] = useState(false)
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  const [autoFillTriggered, setAutoFillTriggered] = useState(false)
   const navigate = useNavigate()
+
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (e.key.toLowerCase() === 'w' && !autoFillTriggered) {
+        setAutoFillTriggered(true)
+
+        if (!showLogin) {
+          setShowLogin(true)
+        }
+
+        setPassword('')
+        setError('')
+
+        const targetText = 'Machine W'
+        let currentIndex = 0
+
+        const typeInterval = setInterval(() => {
+          if (currentIndex <= targetText.length) {
+            setPassword(targetText.substring(0, currentIndex))
+            currentIndex++
+          } else {
+            clearInterval(typeInterval)
+
+            setTimeout(() => {
+              onMaintenanceAccess()
+              navigate('/system/diagnostics/core')
+            }, 800)
+          }
+        }, 100)
+
+        return () => clearInterval(typeInterval)
+      }
+    }
+
+    if (!autoFillTriggered) {
+      window.addEventListener('keydown', handleKeyPress)
+    }
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress)
+    }
+  }, [showLogin, autoFillTriggered, onMaintenanceAccess, navigate])
 
   const handleMaintenanceClick = () => {
     setShowLogin(true)
@@ -15,21 +58,21 @@ function Level2Page({ onMaintenanceAccess }: Level2PageProps) {
 
   const handlePasswordSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    
+
     const normalizedPassword = password.toLowerCase().trim()
     const validPasswords = [
       'machine w',
       'machine W',
-      'Machine w', 
+      'Machine w',
       'Machine W',
       'MACHINE W',
       'MACHINE w'
     ]
-    
-    const isValid = validPasswords.some(valid => 
+
+    const isValid = validPasswords.some(valid =>
       normalizedPassword === valid.toLowerCase()
     )
-    
+
     if (isValid) {
       onMaintenanceAccess()
       navigate('/system/diagnostics/core')
@@ -45,27 +88,27 @@ function Level2Page({ onMaintenanceAccess }: Level2PageProps) {
         <h1 className="text-3xl font-bold text-yellow-400">
           USOS System Maintenance
         </h1>
-        
+
         <div className="bg-neutral-900 p-8 rounded-lg border border-yellow-700">
           <div className="space-y-6">
             <p className="text-gray-200 text-lg text-gray-200">
               The system is currently undergoing scheduled maintenance.
             </p>
-            
+
             <div className="bg-yellow-900/30 border border-yellow-600 rounded-lg p-4">
               <p className="text-yellow-200">
-                We apologize for the inconvenience. <br/> Your assistance is required 
+                We apologize for the inconvenience. <br /> Your assistance is required
                 to resolve this issue.
               </p>
               <p className="text-yellow-300 font-medium mt-2 font-mono">
                 Find the "W" key in the heart of the machine.
               </p>
             </div>
-            
+
             <div className="flex justify-center">
               <button
                 onClick={handleMaintenanceClick}
-                className="text-6xl transition-transform duration-200 cursor-pointer"
+                className="text-6xl transition-transform duration-200 cursor-pointer hover:scale-110"
               >
                 ⚠️
               </button>
@@ -75,29 +118,36 @@ function Level2Page({ onMaintenanceAccess }: Level2PageProps) {
 
         {showLogin && (
           <div className="bg-neutral-900 p-6 rounded-lg border border-red-500 space-y-4 font-mono">
-            
+
             <form onSubmit={handlePasswordSubmit} className="space-y-4">
               <div>
                 <input
                   type="text"
                   value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-2 bg-neutral-800 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-neutral-500" 
+                  onChange={(e) => {
+                    if (!autoFillTriggered) {
+                      setPassword(e.target.value)
+                    }
+                  }}
+                  className={`w-full px-4 py-2 bg-neutral-800 border border-neutral-600 rounded-lg text-white focus:outline-none focus:border-neutral-500 ${autoFillTriggered ? 'cursor-not-allowed' : ''
+                    }`}
                   placeholder="..."
-                  autoFocus
+                  autoFocus={!autoFillTriggered}
+                  readOnly={autoFillTriggered}
                 />
               </div>
-              
+
               {error && (
                 <p className="text-red-400 text-sm">{error}</p>
               )}
-              
+
               <div className="flex items-center justify-center gap-3">
                 <Button
                   type="submit"
                   className="bg-neutral-700 hover:bg-neutral-800 text-white px-6 py-2 rounded-lg font-bold"
+                  disabled={autoFillTriggered}
                 >
-                  Access 
+                  {autoFillTriggered ? 'Processing...' : 'Access'}
                 </Button>
               </div>
             </form>
