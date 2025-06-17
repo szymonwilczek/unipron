@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
-import TutajewiczAvatar from '@/components/TutajewiczAvatar'
+import TutajewiczAvatar from '@/components/lvl3/TutajewiczAvatar'
 
 const correctCode = `czyt wys wei il;
 wyad wea;
