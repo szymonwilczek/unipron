@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
-import BodzentaAvatar from '@/components/BodzentaAvatar'
-import SecurityCamera from '@/components/SecurityCamera'
+import BodzentaAvatar from '@/components/lvl5/BodzentaAvatar'
+import SecurityCamera from '@/components/lvl5/SecurityCamera'
 
 function Level5Page() {
   const [answer, setAnswer] = useState('')
