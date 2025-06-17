@@ -89,7 +89,6 @@ what in the world is this?`)
           <div className="mb-4">
             <div className="relative bg-neutral-900 border border-red-600 rounded-md overflow-hidden">
               <div className="flex">
-                {/* Numery linii */}
                 <div className="bg-neutral-900 text-gray-500 text-sm font-mono px-3 py-2 select-none focus:ring-0 focus:border-none focus:border-transparent">
                   {code.split('\n').map((_, index) => (
                     <div key={index} className="leading-6">
@@ -98,7 +97,6 @@ what in the world is this?`)
                   ))}
                 </div>
 
-                {/* Textarea */}
                 <Textarea
                   value={code}
                   onChange={(e) => handleCodeChange(e.target.value)}
