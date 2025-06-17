@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import LobuzAvatar from '@/components/LobuzAvatar'
+import LobuzAvatar from '@/components/lvl4/LobuzAvatar'
 
 interface TermPageProps {
   termNumber: number
