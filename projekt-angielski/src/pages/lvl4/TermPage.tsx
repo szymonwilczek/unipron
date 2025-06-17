@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom'
-import { Button } from '@/components/ui/button'
 import LobuzAvatar from '@/components/LobuzAvatar'
 
 interface TermPageProps {
@@ -113,14 +112,12 @@ function TermPage({ termNumber }: TermPageProps) {
     <div className="min-h-screen bg-neutral-950 p-2">
       <div className="max-w-7xl mx-auto mt-12">
         <div className="flex flex-row" style={{ height: 'auto', minHeight: 'fit-content' }}>
-          {/* Content */}
           <div className="flex-1">
             <div className="bg-neutral-900 rounded-lg border-1 border-neutral-700 h-full min-h-full">
               {content}
             </div>
           </div>
 
-          {/* Avatar */}
           <div className="flex-shrink-0 h-full">
             <LobuzAvatar />
           </div>
