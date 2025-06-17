@@ -428,7 +428,6 @@ function TerminalPage() {
           className="bg-zinc-950 rounded-b-lg p-4 h-96 overflow-y-auto border border-gray-600"
           onClick={() => !showDataForm && inputRef.current?.focus()}
         >
-          {/* Initial message */}
           {history.length === 0 && (
             <div className="mb-4">
               <div className="text-green-400">Hello there.</div>

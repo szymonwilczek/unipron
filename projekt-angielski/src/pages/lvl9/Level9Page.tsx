@@ -20,7 +20,7 @@ function Level9Page() {
   return (
     <div className="min-h-screen bg-neutral-950 flex items-center justify-center p-4">
       <div className="check /terminal or /console" />
-      <div className="ssh: student@polsl.pl" />
+      <div className="connect via ssh: student@polsl.pl" />
       <div className="max-w-4xl w-full text-center">
         <div className="bg-neutral-900 rounded-lg p-8 border border-neutral-700 shadow-2xl">
 
