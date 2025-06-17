@@ -36,3 +36,6 @@ zdjecie walki rycerzy z naniesionym kodem morsa "subject", a odpowiedz to "Elect
 
 
 Snake z unikaniem pracowników ING/mBank
+
+
+-- PROBLEM Z VERCELEM Z TermPage!! Rozwiązać przez vercel.json
