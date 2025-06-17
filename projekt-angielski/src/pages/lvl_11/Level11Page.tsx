@@ -1,15 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
-
-interface Component {
-  id: string
-  type: 'led' | 'resistor' | 'battery' | 'capacitor' | 'switch' | 'wire'
-  x: number
-  y: number
-  connected: boolean
-  onBoard: boolean
-}
+import type { Component } from '@/types/types'
+import ComponentShelfItem, { getComponentIcon } from '@/components/lvl_11/ComponentShelfItem'
+import CompletionScreen from '@/components/lvl_11/CompletionScreen'
 
 interface Connection {
   id: string
@@ -29,7 +22,6 @@ function Level11Page() {
   const [userAttempts, setUserAttempts] = useState(0)
   const [connectingMode, setConnectingMode] = useState(false)
   const [selectedComponent, setSelectedComponent] = useState<string | null>(null)
-  const navigate = useNavigate()
   const boardRef = useRef<HTMLDivElement>(null)
 
   const requiredConnections = [
@@ -500,75 +492,6 @@ function Level11Page() {
               )}
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function ComponentShelfItem({ component, isDragging, jacekHelping, isSelected, connectingMode }: {
-  component: Component
-  isDragging: boolean
-  jacekHelping: boolean
-  isSelected: boolean
-  connectingMode: boolean
-}) {
-
-  return (
-    <div className={`p-2 rounded-lg border-2 text-center transition-all duration-200 ${isDragging ? 'border-orange-500 bg-orange-900/50 scale-110' :
-      isSelected ? 'border-blue-500 bg-neutral-800/50 ring-2 ring-blue-400' :
-        jacekHelping ? 'border-gray-600 bg-gray-700/30 opacity-50' :
-          connectingMode ? 'border-blue-400 bg-blue-900/20 hover:border-blue-300' :
-            'border-gray-500 bg-gray-700/30 hover:border-orange-400'
-      }`}>
-      <div className="text-xl mb-1">{getComponentIcon(component.type)}</div>
-      <div className="text-white text-xs font-semibold">{getComponentName(component.type)}</div>
-    </div>
-  )
-}
-
-function getComponentIcon(type: string) {
-  switch (type) {
-    case 'led': return '💡'
-    case 'resistor': return '🔗'
-    case 'battery': return '🔋'
-    case 'capacitor': return '⚡'
-    case 'switch': return '🔘'
-    case 'wire': return '📎'
-    default: return '⚡'
-  }
-}
-
-function getComponentName(type: string) {
-  switch (type) {
-    case 'led': return 'LED'
-    case 'resistor': return 'Resistor'
-    case 'battery': return 'Battery'
-    case 'capacitor': return 'Capacitor'
-    case 'switch': return 'Switch'
-    case 'wire': return 'Wire'
-    default: return 'Element'
-  }
-}
-
-function CompletionScreen() {
-  const navigate = useNavigate();
-
-  return (
-    <div className="min-h-screen bg-neutral-950 flex items-center justify-center p-4">
-      <div className="max-w-2xl w-full text-center">
-        <div className="bg-neutral-900 backdrop-blur-sm rounded-lg p-8 border border-neutral-700">
-          <div className="text-6xl mb-6">🏆</div>
-
-          <h1 className="text-3xl font-bold text-neutral-200 mb-4">
-            Circut completed (by Dr. Jaciński)
-          </h1>
-          <Button
-            onClick={() => navigate('/bank-escape')}
-            className="bg-neutral-800 border border-neutral-700 hover:bg-neutral-900 text-white px-8 py-4 text-xl font-bold font-mono"
-          >
-            Next level
-          </Button>
         </div>
       </div>
     </div>

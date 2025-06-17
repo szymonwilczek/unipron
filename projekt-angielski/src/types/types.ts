@@ -29,3 +29,12 @@ export interface Question {
   answer: string
   method: string
 }
+
+export interface Component {
+  id: string
+  type: 'led' | 'resistor' | 'battery' | 'capacitor' | 'switch' | 'wire'
+  x: number
+  y: number
+  connected: boolean
+  onBoard: boolean
+}
