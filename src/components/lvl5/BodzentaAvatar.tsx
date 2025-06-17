@@ -28,17 +28,14 @@ function BodzentaAvatar({ position }: BodzentaAvatarProps) {
   return (
     <div className={`fixed ${getPositionClasses()} z-10 ${getAnimationDelay()}`}>
       <div className="relative">
-        {/* Świecąca aura */}
         <div className="absolute inset-0 bg-red-500/20 rounded-full blur-xl scale-150 animate-pulse"></div>
         
-        {/* Avatar */}
         <div className="relative w-32 h-32 rounded-full overflow-hidden border-3 border-red-500 shadow-lg shadow-red-500/50">
           <img 
             src="/images/bodzenta.png" 
             alt="Prof. Jerzy Bodzenta"
             className="w-full h-full object-cover"
             onError={(e) => {
-              // Fallback jeśli obraz się nie załaduje
               const target = e.target as HTMLImageElement
               target.style.display = 'none'
               target.nextElementSibling?.classList.remove('hidden')
@@ -49,7 +46,6 @@ function BodzentaAvatar({ position }: BodzentaAvatarProps) {
           </div>
         </div>
 
-        {/* Oczy śledzące */}
         <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-red-400 rounded-full animate-ping"></div>
         <div className="absolute top-1/4 right-1/4 w-2 h-2 bg-red-400 rounded-full animate-ping animation-delay-300"></div>
       </div>
