@@ -22,3 +22,10 @@ export interface Lever {
   isActivated: boolean
   isBomb: boolean
 }
+
+export interface Question {
+  id: string
+  question: string
+  answer: string
+  method: string
+}

@@ -1,13 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Button } from '@/components/ui/button'
-
-interface Question {
-  id: string
-  question: string
-  answer: string
-  method: string
-}
+import type { Question } from '@/types/types'
+import QuestionCard from '@/components/lvl8/QuestionCard'
+import CompletionScreen from '@/components/lvl8/CompletionScreen'
 
 function Level8Page() {
   const [currentQuestion, setCurrentQuestion] = useState(0)
@@ -25,7 +20,7 @@ function Level8Page() {
     },
     {
       id: 'recursion',
-      question: "second (second (second (second))) question and first answer;",
+      question: "second (second (second (second))) question;",
       answer: "recursion",
       method: "Console Variable"
     },
@@ -43,7 +38,7 @@ function Level8Page() {
     },
     {
       id: 'lifo',
-      question: "Last question and first answer;",
+      question: "Last question and first answer out;",
       answer: "lifo",
       method: "HTML Comment"
     }
@@ -155,93 +150,6 @@ function Level8Page() {
       </style>
 
       <div className="siminski-hidden-answer secret-programming-principle"></div>
-    </div>
-  )
-}
-
-function QuestionCard({ question, userAnswer, onAnswerChange, onSubmit }: {
-  question: Question
-  userAnswer: string
-  onAnswerChange: (value: string) => void
-  onSubmit: () => void
-}) {
-  return (
-    <div className="bg-neutral-900 rounded-lg p-8 border border-neutral-700">
-      <div className="mb-6">
-        <h3 className="text-xl font-bold font-mono text-white mb-4">
-          {question.question}
-        </h3>
-      </div>
-
-      <div className="space-y-4">
-        <div>
-          <input
-            type="text"
-            value={userAnswer}
-            onChange={(e) => onAnswerChange(e.target.value)}
-            placeholder="answer..."
-            className="w-full font-mono bg-neutral-800 border border-neutral-700 rounded-lg px-4 py-3 text-white focus:border-green-500 focus:outline-none"
-            onKeyDown={(e) => e.key === 'Enter' && onSubmit()}
-          />
-        </div>
-        <div className="flex items-center justify-center">
-          <Button
-            onClick={onSubmit}
-            disabled={!userAnswer.trim()}
-            className="bg-neutral-700 hover:bg-neutral-800 font-mono text-white p-3 text-lg font-bold disabled:opacity-50">
-            CHECK
-          </Button>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function CompletionScreen({ score, total, onComplete }: {
-  score: number
-  total: number
-  onComplete: () => void
-}) {
-  const percentage = (score / total) * 100
-  const passed = score >= 4
-
-  return (
-    <div className="min-h-screen bg-neutral-950 flex items-center justify-center p-4">
-      <div className="max-w-2xl w-full text-center">
-        <div className="bg-neutral-900 rounded-lg p-8 border border-neutral-700">
-          <div className="text-6xl mb-6">
-            {passed ? '🎉' : '😞'}
-          </div>
-
-          <h1 className="text-3xl font-bold font-mono text-white mb-4">
-            {passed ? 'Congrats!' : 'Try again'}
-          </h1>
-
-          <p className="text-gray-300 text-lg mb-6">
-            <span className="text-green-400 font-bold">{score}/{total}</span> ({percentage.toFixed(0)}%)
-          </p>
-
-          {passed ? (
-            <div className="space-y-4">
-              <Button
-                onClick={onComplete}
-                className="bg-neutral-700 hover:bg-neutral-800 text-white px-8 py-4 text-xl font-bold"
-              >
-                next
-              </Button>
-            </div>
-          ) : (
-            <div className="space-y-4">
-              <Button
-                onClick={() => window.location.reload()}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-xl font-bold"
-              >
-                🔄 SPRÓBUJ PONOWNIE
-              </Button>
-            </div>
-          )}
-        </div>
-      </div>
     </div>
   )
 }
