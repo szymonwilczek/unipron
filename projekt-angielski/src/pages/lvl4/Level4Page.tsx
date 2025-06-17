@@ -22,11 +22,6 @@ function Level4Page() {
         <p className="text-gray-300 text-lg">
           Redirecting to Mathematical Analysis...
         </p>
-        <div className="bg-blue-900/30 border border-blue-600 rounded-lg p-4 max-w-md mx-auto">
-          <p className="text-blue-200 text-sm">
-            💡 <strong>Hint:</strong> It won't be that easy....
-          </p>
-        </div>
       </div>
     </div>
   )
