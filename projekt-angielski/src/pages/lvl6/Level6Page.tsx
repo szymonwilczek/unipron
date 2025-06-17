@@ -221,6 +221,7 @@ function Level6Page() {
           currentSequence={currentSequence}
           expectedLength={currentQuestData?.expectedSequence.length || 0}
           questComplete={allQuestsComplete}
+          questId={currentQuestData?.id} 
         />
       </div>
     </div>
