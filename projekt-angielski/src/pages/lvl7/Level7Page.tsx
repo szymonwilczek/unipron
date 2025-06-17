@@ -93,7 +93,7 @@ It worked correctly for the intended inputs. We did not notice any abnormalities
   return (
     <div className="min-h-screen bg-neutral-950 p-4">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
+
         <div className="text-center mb-8">
           <div className="flex flex-col items-center justify-center gap-4 mb-4">
             <img
