@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
-import type { HomePageProps } from '@/types'
+import type { HomePageProps } from '@/types/types'
 
 function HomePage({ onAuthenticate }: HomePageProps) {
   const navigate = useNavigate()

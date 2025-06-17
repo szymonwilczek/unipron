@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
-import type { Level2PageProps } from '@/types'
+import type { Level2PageProps } from '@/types/types'
 
 function Level2Page({ onMaintenanceAccess }: Level2PageProps) {
   const [showLogin, setShowLogin] = useState(false)
