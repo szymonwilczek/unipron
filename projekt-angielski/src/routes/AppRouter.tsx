@@ -16,6 +16,7 @@ import Level11Page from '@/pages/lvl_11/Level11Page'
 import EndingPage from '@/pages/end/EndingPage'
 import EasterEggPage from '@/pages/easter-egg/EasterEggPage'
 import TerminalPage from '@/pages/lvl9/TerminalPage'
+import Level12Page from '@/pages/lvl_12/Level12Page'
 
 function AppRouter() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
@@ -94,6 +95,8 @@ function AppRouter() {
           <Route path="/algorithms/czech" element={<Level10Page />} />
 
           <Route path="/electronics/repair" element={<Level11Page />} />
+
+          <Route path="/bank-escape" element={<Level12Page />} />
 
           <Route path="/ending" element={<EndingPage />} />
 
