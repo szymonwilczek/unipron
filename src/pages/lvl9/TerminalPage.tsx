@@ -23,10 +23,8 @@ function TerminalPage() {
     extension: '',
     labAccessCode: '',
     parkingSpot: '',
-    lockerCode: '',
     systemLogin: '',
     accessCardId: '',
-    sshKey: ''
   })
 
   const correctData = {
@@ -34,10 +32,8 @@ function TerminalPage() {
     extension: '38',
     labAccessCode: 'LAB_DS_7891',
     parkingSpot: 'P-47',
-    lockerCode: '1847',
     systemLogin: 'kpaszek_sys',
     accessCardId: '7891234',
-    sshKey: 'AAAAB3NzaC1yc2EAAAADAQABAAABgQC7vbq'
   }
 
   const fileSystem: FileSystemNode = {
@@ -568,40 +564,12 @@ function TerminalPage() {
 
                   <div>
                     <label className="block text-sm font-semibold text-neutral-300 mb-2">
-                      Locker code
-                    </label>
-                    <input
-                      type="text"
-                      value={formData.lockerCode}
-                      onChange={(e) => handleInputChange('lockerCode', e.target.value)}
-                      placeholder="..."
-                      className="w-full bg-neutral-800 border border-neutral-600 rounded-lg px-3 py-2 text-green-400 font-mono focus:outline-none text-sm"
-                      disabled={isSubmitting}
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-neutral-300 mb-2">
                       System login
                     </label>
                     <input
                       type="text"
                       value={formData.systemLogin}
                       onChange={(e) => handleInputChange('systemLogin', e.target.value)}
-                      placeholder="..."
-                      className="w-full bg-neutral-800 border border-neutral-600 rounded-lg px-3 py-2 text-green-400 font-mono focus:outline-none text-sm"
-                      disabled={isSubmitting}
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-neutral-300 mb-2">
-                      SSH Key
-                    </label>
-                    <input
-                      type="text"
-                      value={formData.sshKey}
-                      onChange={(e) => handleInputChange('sshKey', e.target.value)}
                       placeholder="..."
                       className="w-full bg-neutral-800 border border-neutral-600 rounded-lg px-3 py-2 text-green-400 font-mono focus:outline-none text-sm"
                       disabled={isSubmitting}
