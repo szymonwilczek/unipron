@@ -131,16 +131,6 @@ function Level12Page() {
       },
       {
         id: 3,
-        position: { x: 12, y: 9 },
-        bank: 'ing',
-        direction: { x: 0, y: 1 },
-        mode: 'chase',
-        message: bankMessages.ing[1],
-        showMessage: false,
-        messageTimer: 0
-      },
-      {
-        id: 4,
         position: { x: 9, y: 11 },
         bank: 'mbank',
         direction: { x: -1, y: 0 },
