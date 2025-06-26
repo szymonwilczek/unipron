@@ -11,7 +11,7 @@ czyt wys weja dod weak wyl wea;`
 function Level3Page() {
   const [code, setCode] = useState(`czyt wei il wys;
 wea wyad;
-czyt wys dod weja wyl wyl wea;
+czyt wys weja dod wyl wyl wea;
 what in the world is this?`)
 
   const [error, setError] = useState('Failed to decode the command correctly!')
