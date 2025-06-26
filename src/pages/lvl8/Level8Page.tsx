@@ -55,6 +55,7 @@ function Level8Page() {
     console.log("Do not underestimate the power of DevTools!")
 
     localStorage.setItem('programming_answer', 'local storage')
+    localStorage.setItem('last_answer', 'lifo')
     sessionStorage.setItem('programming_answer', 'session storage')
 
     const img = new Image()
